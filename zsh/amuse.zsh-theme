@@ -1,4 +1,4 @@
-# vim:ft=zsh ts=2 sw=2 sts=2
+	# vim:ft=zsh ts=2 sw=2 sts=2
 
 rvm_current() {
   rvm current 2>/dev/null
@@ -10,7 +10,7 @@ rbenv_version() {
 
 PROMPT='
 %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
- $USER $ '
+%{$fg[cyan]%}$USER%{$reset_color%} $ '
 
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}\u21af "
