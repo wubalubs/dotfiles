@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -109,6 +109,11 @@ alias pacfnd='sudo pacman -Ss'
 alias pacupd='sudo pacman -Sy'
 alias pacrmv='sudo pacman -R'
 
+alias boop='sudo nmap -sS'
+alias pulse=''
+
+
+
 
 
 #### FUNCTION JUNCTION ####
@@ -117,4 +122,14 @@ function dotsync() {
 	sudo cp -v /home/david/.bash_profile /home/david/projects/git/dotfiles/arch/default/.bash_profile
 	sudo cp -v /root/.bashrc /home/david/projects/git/dotfiles/arch/root/.bashrc
 	sudo cp -v /root/.bash_profile /home/david/projects/git/dotfiles/arch/root/.bash_profile
+}
+
+
+function dtty() {
+	sudo docker exec -it $1 /bin/ash
+}
+
+function tfmod {
+	cat $3 | grep $1
+	sed -e s/$1/$2/g $3
 }
