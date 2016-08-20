@@ -13,9 +13,9 @@ PROMPT='
 $USER@$HOST $ '
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}\u27a6 "
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}\u21af "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} \u2715"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
