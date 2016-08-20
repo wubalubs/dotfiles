@@ -130,6 +130,9 @@ function dtty() {
 }
 
 function tfmod {
+	printf "\033[35mThe lines below have been modified\033[0m\n"
 	cat $3 | grep $1
-	sed -e s/$1/$2/g $3
+	sed -i -e s/$1/$2/g $3
+	printf "\033[35m\nChanges are highlighted below:\033[0m\n"	
+	cat $3 | grep $2
 }
