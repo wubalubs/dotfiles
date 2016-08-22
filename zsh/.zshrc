@@ -96,7 +96,9 @@ alias ls='ls --color=auto'
 
 
 #### ALIAS PARTY ####
-alias breset='. ~/.bashrc'
+alias bshupd='. ~/.bashrc'
+alias zshupd='. ~/.zshrc'
+
 alias reboot='sudo reboot'
 alias systemctl='sudo systemctl'
 alias ps='sudo ps'
@@ -118,10 +120,14 @@ alias pulse=''
 
 #### FUNCTION JUNCTION ####
 function dotsync() {
-	sudo cp -v /home/david/.bashrc /home/david/projects/git/dotfiles/arch/default/.bashrc
-	sudo cp -v /home/david/.bash_profile /home/david/projects/git/dotfiles/arch/default/.bash_profile
-	sudo cp -v /root/.bashrc /home/david/projects/git/dotfiles/arch/root/.bashrc
-	sudo cp -v /root/.bash_profile /home/david/projects/git/dotfiles/arch/root/.bash_profile
+	local ZSHRC="$HOME/.zshrc"
+	if [ -e "$ZSHRC" ];
+		then 
+		echo "Confirmed! $ZSHRC exists"
+		else 
+		echo "$ZSHRC not found!!"
+	fi 
+
 }
 
 
