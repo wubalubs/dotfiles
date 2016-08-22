@@ -47,13 +47,14 @@ alias pulse=''
 #### FUNCTION JUNCTION ####
 function dotsync() {
 	local ZSHRC="$HOME/.zshrc"
-	if [ -e "$ZSHRC" ];
-		then 
+if [ -e "$ZSHRC" ];
+	then 
 		echo "Copying zsh files..."
 		cp -v $ZSHRC $HOME/Projects/git/dotfiles/zsh/.zshrc
-		else 
+		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
+else 
 		echo "$ZSHRC not found!!"
-	fi 
+fi 
 
 }
 
