@@ -123,7 +123,8 @@ function dotsync() {
 	local ZSHRC="$HOME/.zshrc"
 	if [ -e "$ZSHRC" ];
 		then 
-		echo "Confirmed! $ZSHRC exists"
+		echo "Copying zsh files..."
+		cp -v $ZSHRC $HOME/Projects/git/dotfiles/zsh/.zshrc
 		else 
 		echo "$ZSHRC not found!!"
 	fi 
