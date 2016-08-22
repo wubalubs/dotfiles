@@ -50,7 +50,9 @@ function dotsync() {
 if [ -e "$ZSHRC" ];
 	then 
 		echo "Copying zsh files..."
+		printf "\n"
 		cp -v $ZSHRC $HOME/Projects/git/dotfiles/zsh/.zshrc
+		printf "\n"
 		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
 else 
 		echo "$ZSHRC not found!!"
