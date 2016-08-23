@@ -56,7 +56,7 @@ if [ -e "$ZSHRC" ];
 		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
 		
 		printf "\n"
-		printf "Push to git?\n"
+		printf "Push to git?\n\n"
 		read answer
 	
 		case $answer in 
