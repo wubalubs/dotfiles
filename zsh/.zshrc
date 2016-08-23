@@ -56,7 +56,7 @@ if [ -e "$ZSHRC" ];
 		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
 		
 		printf "\n"
-		printf "Push to git?\n\n"
+		printf "Push to git?\n"
 		read answer
 	
 		case $answer in 
@@ -68,10 +68,7 @@ if [ -e "$ZSHRC" ];
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master -v
 				;;
 			n)
-				printf "You said no, idiot.";;
-			*)
-				printf "Way to go, idiot. Try again."
-				;;
+				printf "Skipping git push and exiting....";;
 		esac
 else 
 		echo "$ZSHRC not found!!"
