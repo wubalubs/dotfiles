@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='ls --color=auto'
 
+export EDITOR=nano
 
 #### ALIAS PARTY ####
 alias bshupd='. ~/.bashrc'
