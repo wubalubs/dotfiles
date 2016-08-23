@@ -54,6 +54,27 @@ if [ -e "$ZSHRC" ];
 		cp -v $ZSHRC $HOME/Projects/git/dotfiles/zsh/.zshrc
 		printf "\n"
 		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
+		
+		printf "\n"
+		printf "Push to git?"
+		read answer
+	
+		case $answer in 
+			y)
+				printf "Pushing to git..."
+				sleep 3
+				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles add .
+				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles commit -m "zshrc 
+updates" -v
+				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master 
+-v
+				;;
+			n)
+				printf "You said no, idiot.";;
+			*)
+				printf "Way to go, idiot. Try again."
+				;;
+		esac
 else 
 		echo "$ZSHRC not found!!"
 fi 
