@@ -56,18 +56,16 @@ if [ -e "$ZSHRC" ];
 		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
 		
 		printf "\n"
-		printf "Push to git?"
+		printf "Push to git?\n"
 		read answer
 	
 		case $answer in 
 			y)
-				printf "Pushing to git..."
+				printf "Pushing to git...\n"
 				sleep 3
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles add .
-				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles commit -m "zshrc 
-updates" -v
-				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master 
--v
+				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles commit -m "zshrc updates" -v
+				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master -v
 				;;
 			n)
 				printf "You said no, idiot.";;
