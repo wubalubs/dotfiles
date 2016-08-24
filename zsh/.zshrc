@@ -69,7 +69,7 @@ if [ -e "$ZSHRC" ];
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master -v
 				;;
 			n)
-				printf "Skipping git push and exiting....";;
+				printf "Skipping git push and exiting....\n";;
 		esac
 else 
 		echo "$ZSHRC not found!!"
