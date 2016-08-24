@@ -63,7 +63,7 @@ if [ -e "$ZSHRC" ];
 		case $answer in 
 			y)
 				printf "Pushing to git...\n"
-				sleep 3
+				sleep 1
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles add .
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles commit -m "zshrc updates" -v
 				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master -v
