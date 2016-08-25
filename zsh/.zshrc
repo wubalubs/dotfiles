@@ -37,6 +37,7 @@ alias pacsrc='sudo pacman -S'
 alias pacfnd='sudo pacman -Ss'
 alias pacupd='sudo pacman -Sy'
 alias pacrmv='sudo pacman -R'
+alias pacdet='sudo pacman -Qie'
 
 alias boop='sudo nmap -sS'
 alias pulse=''
