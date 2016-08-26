@@ -34,12 +34,12 @@ alias docker='sudo docker'
 
 alias pacupg='sudo pacman -Syu'
 alias pacsrc='sudo pacman -S'
-alias pacfnd='sudo pacman -Ss'
+alias pacfnd='sudo pacman -Pn'
 alias pacupd='sudo pacman -Sy'
 alias pacrmv='sudo pacman -R'
 alias pacdet='sudo pacman -Qie'
 
-alias boop='sudo nmap -sS'
+alias boop='sudo nmap -Pn'
 alias pulse=''
 
 
@@ -79,8 +79,11 @@ fi
 }
 
 
-function dtty() {
+function atty() {
 	sudo docker exec -it $1 /bin/ash
+}
+function btty() {
+	sudo docker exec -it $1 /bin/bash
 }
 
 function tfmod {
