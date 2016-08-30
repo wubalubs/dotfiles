@@ -18,13 +18,14 @@ source $ZSH/oh-my-zsh.sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='ls -l --color=auto --block-size=M'
 
 export EDITOR=nano
 
 #### ALIAS PARTY ####
 alias bshupd='. ~/.bashrc'
 alias zshupd='. ~/.zshrc'
+alias cls='clear'
 
 alias reboot='sudo reboot'
 alias systemctl='sudo systemctl'
@@ -34,14 +35,14 @@ alias docker='sudo docker'
 
 alias pacupg='sudo pacman -Syu'
 alias pacsrc='sudo pacman -S'
-alias pacfnd='sudo pacman -Pn'
+alias pacfnd='sudo pacman -Ss'
 alias pacupd='sudo pacman -Sy'
 alias pacrmv='sudo pacman -R'
 alias pacdet='sudo pacman -Qie'
 
 alias boop='sudo nmap -Pn'
 alias pulse=''
-
+#alias netinfo='ip addr | grep 
 
 
 
