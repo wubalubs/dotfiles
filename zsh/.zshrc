@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls -l --color=auto --block-size=M'
+alias ls='ls --color=auto --block-size=M'
 
 export EDITOR=nano
 
@@ -94,3 +94,21 @@ function tfmod {
 	printf "\033[35m\nChanges are highlighted below:\033[0m\n"	
 	cat $3 | grep $2
 }
+
+function netinfo() {
+	local INTERFACES=$(ls "/sys/class/net/")
+	ARRAY=$INTERFACES
+	
+	for i in $INTERFACES;
+	do
+		if [[ $i != doc* ]] ; then
+		echo $i
+		continue;
+			
+		else
+		echo "no match"
+		
+		fi
+	done
+}
+
