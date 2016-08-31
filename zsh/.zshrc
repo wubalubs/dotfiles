@@ -100,18 +100,16 @@ function netinfo() {
 	pushd /sys/class/net > /dev/null
 	INTERFACES=(*)
 	popd > /dev/null
-#	declare -p INTERFACES
-
 
 	for i in "${INTERFACES[@]}";
 
 	do
-		if [[ $i != docker* && $i != lo* ]] ; 
+		if [[ $i != docker* && $i != lo* && $i != eth* && $i != en* ]] ; 
 		then
 			iwconfig $i
-			ip addr | grep $i
 		fi
 	done
+	ip -4 addr | grep inet
 	printf "\nCurrent public is $PUBLIC\n"
 }
 
