@@ -96,18 +96,22 @@ function tfmod {
 }
 
 function netinfo() {
+	PUBLIC=$(curl -s -4 icanhazip.com)
 	pushd /sys/class/net > /dev/null
 	INTERFACES=(*)
 	popd > /dev/null
-	declare -p INTERFACES
+#	declare -p INTERFACES
+
 
 	for i in "${INTERFACES[@]}";
 
 	do
 		if [[ $i != docker* && $i != lo* ]] ; 
 		then
-			echo "$i is an interface"
+			iwconfig $i
+			ip addr | grep $i
 		fi
 	done
+	printf "\nCurrent public is $PUBLIC\n"
 }
 
