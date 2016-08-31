@@ -104,8 +104,10 @@ function netinfo() {
 	for i in "${INTERFACES[@]}";
 
 	do
-		iwconfig "$i"
-	
+		if [[ $i != docker* && $i != lo* ]] ; 
+		then
+			echo "$i is an interface"
+		fi
 	done
 }
 
