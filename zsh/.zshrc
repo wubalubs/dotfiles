@@ -77,7 +77,7 @@ else
 		echo "$ZSHRC not found!!"
 fi 
 
-}
+ 	}
 
 
 function atty() {
@@ -96,19 +96,16 @@ function tfmod {
 }
 
 function netinfo() {
-	local INTERFACES=$(ls "/sys/class/net/")
-	ARRAY=$INTERFACES
-	
-	for i in $INTERFACES;
+	pushd /sys/class/net > /dev/null
+	INTERFACES=(*)
+	popd > /dev/null
+	declare -p INTERFACES
+
+	for i in "${INTERFACES[@]}";
+
 	do
-		if [[ $i != doc* ]] ; then
-		echo $i
-		continue;
-			
-		else
-		echo "no match"
-		
-		fi
+		iwconfig "$i"
+	
 	done
 }
 
