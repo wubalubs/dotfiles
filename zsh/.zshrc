@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto --block-size=M'
+alias ls='ls -l --color=auto --block-size=M'
 
 export EDITOR=nano
 
@@ -42,12 +42,18 @@ alias pacdet='sudo pacman -Qie'
 
 alias boop='sudo nmap -Pn'
 alias pulse=''
-#alias netinfo='ip addr | grep 
-
+ 
+alias gitstat='/usr/local/bin/gitstat.sh'
 
 
 
 #### FUNCTION JUNCTION ####
+function weather() {
+	local URL=http://wttr.in/$1
+	curl -s $URL
+}
+
+
 function dotsync() {
 	local ZSHRC="$HOME/.zshrc"
 if [ -e "$ZSHRC" ];
