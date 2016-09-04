@@ -13,6 +13,8 @@ plugins=(git)
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+autoload -Uz compinit && compinit -i
+
 source $ZSH/oh-my-zsh.sh
 
 # If not running interactively, don't do anything
@@ -119,3 +121,6 @@ function netinfo() {
 	printf "\nCurrent public is $PUBLIC\n"
 }
 
+function define() {
+	curl dict://dict.org/d:$1
+}
