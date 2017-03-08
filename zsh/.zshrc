@@ -57,7 +57,7 @@ function weather() {
 
 function beach(){
 	docker stop $1 && docker rm $1
-}
+} &> /dev/null
 
 
 function dotsync() {
