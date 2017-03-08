@@ -47,7 +47,7 @@ alias pulse=''
  
 alias gitstat='/usr/local/bin/gitstat.sh'
 
-
+alias ayy='declare -f'
 
 #### FUNCTION JUNCTION ####
 function weather() {
