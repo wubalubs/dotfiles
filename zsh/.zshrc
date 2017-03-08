@@ -55,6 +55,10 @@ function weather() {
 	curl -s $URL
 }
 
+function beach(){
+	docker stop $1 && docker rm $1
+}
+
 
 function dotsync() {
 	local ZSHRC="$HOME/.zshrc"
