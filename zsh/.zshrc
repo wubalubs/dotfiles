@@ -45,22 +45,21 @@ alias pacdet='sudo pacman -Qie'
 alias boop='sudo nmap -Pn'
 alias pulse=''
 
-#not sure where this script went :x 
-#alias gitstat='/usr/local/bin/gitstat.sh'
-
-alias ayy='declare -f'
-
 #### FUNCTION JUNCTION ####
+
+#THIS IS NICE, BUT WHEN DO I EVER USE THIS?
+
 function weather() {
 	local URL=http://wttr.in/$1
 	curl -s $URL
 }
 
+#STOP AND REMOVE DOCKER CONTAINER	
 function beach(){
 	docker stop $1 && docker rm $1
 } &> /dev/null
 
-
+#SYNC DOTFILES TO GITHUB
 function dotsync() {
 	local ZSHRC="$HOME/.zshrc"
 if [ -e "$ZSHRC" ];
@@ -92,7 +91,7 @@ fi
 
  	}
 
-
+#THESE 
 function atty() {
 	sudo docker exec -it $1 /bin/ash
 }
@@ -100,7 +99,9 @@ function btty() {
 	sudo docker exec -it $1 /bin/bash
 }
 
+#QUICKLY FIND AND REPLACE 
 function tfmod {
+	#USAGE?
 	printf "\033[35mThe lines below have been modified\033[0m\n"
 	cat $3 | grep $1
 	sed -i -e s/$1/$2/g $3
@@ -108,6 +109,7 @@ function tfmod {
 	cat $3 | grep $2
 }
 
+#QUICK AND EASY NETINFO FOR ALL INFERFACES
 function netinfo() {
 	PUBLIC=$(curl -s -4 icanhazip.com)
 	pushd /sys/class/net > /dev/null
@@ -126,6 +128,7 @@ function netinfo() {
 	printf "\nCurrent public is $PUBLIC\n"
 }
 
+#QUICK DICTIONARY LOOKUP
 function define() {
 	curl dict://dict.org/d:$1
 }
