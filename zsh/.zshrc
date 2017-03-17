@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/david/.oh-my-zsh
+  export ZSH=/home/wubalubs/.oh-my-zsh
 
 # Set name of the theme to load. Zsh looks in ~/.oh-my-zsh/themes
 ZSH_THEME="amuse"
@@ -44,8 +44,9 @@ alias pacdet='sudo pacman -Qie'
 
 alias boop='sudo nmap -Pn'
 alias pulse=''
- 
-alias gitstat='/usr/local/bin/gitstat.sh'
+
+#not sure where this script went :x 
+#alias gitstat='/usr/local/bin/gitstat.sh'
 
 alias ayy='declare -f'
 
@@ -66,9 +67,9 @@ if [ -e "$ZSHRC" ];
 	then 
 		echo "Copying zsh files..."
 		printf "\n"
-		cp -v $ZSHRC $HOME/Projects/git/dotfiles/zsh/.zshrc
+		cp -v $ZSHRC $HOME/projects/git/dotfiles/zsh/.zshrc
 		printf "\n"
-		git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles status	
+		git --git-dir=$HOME/projects/git/dotfiles/.git --work-tree=$HOME/projects/git/dotfiles status	
 		
 		printf "\n"
 		printf "Push to git?\n"
@@ -78,9 +79,9 @@ if [ -e "$ZSHRC" ];
 			y)
 				printf "Pushing to git...\n"
 				sleep 1
-				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles add .
-				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles commit -m "zshrc updates" -v
-				git --git-dir=$HOME/Projects/git/dotfiles/.git --work-tree=$HOME/Projects/git/dotfiles push origin master -v
+				git --git-dir=$HOME/projects/git/dotfiles/.git --work-tree=$HOME/projects/git/dotfiles add .
+				git --git-dir=$HOME/projects/git/dotfiles/.git --work-tree=$HOME/projects/git/dotfiles commit -m "zshrc updates" -v
+				git --git-dir=$HOME/projects/git/dotfiles/.git --work-tree=$HOME/projects/git/dotfiles push origin master -v
 				;;
 			n)
 				printf "Skipping git push and exiting....\n";;
