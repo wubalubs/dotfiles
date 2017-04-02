@@ -101,7 +101,8 @@ function btty() {
 
 #QUICKLY FIND AND REPLACE 
 function tfmod {
-	#USAGE?
+	# USAGE
+	# tfmod target replacement filename
 	printf "\033[35mThe lines below have been modified\033[0m\n"
 	cat $3 | grep $1
 	sed -i -e s/$1/$2/g $3
