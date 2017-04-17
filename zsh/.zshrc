@@ -15,7 +15,7 @@ plugins=(git)
 
 autoload -Uz compinit && compinit -i
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
