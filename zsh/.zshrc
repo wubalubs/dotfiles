@@ -43,7 +43,7 @@ alias pacrmv='sudo pacman -R'
 alias pacdet='sudo pacman -Qie'
 
 alias boop='sudo nmap -Pn'
-alias pulse=''
+alias pulse='nmap -sn'
 
 #### FUNCTION JUNCTION ####
 
